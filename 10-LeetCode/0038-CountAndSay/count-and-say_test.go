@@ -22,6 +22,14 @@ func Test_CountAndSay_S005(t *testing.T) {
 	runCountAndSayTest(t, 5, "111221") // one 1, one 2, 2 ones
 }
 
+func Test_CountAndSay_S010(t *testing.T) {
+	runCountAndSayTest(t, 10, "13211311123113112211")
+}
+
+func Test_CountAndSay_S015(t *testing.T) {
+	runCountAndSayTest(t, 15, "311311222113111231131112132112311321322112111312211312111322212311322113212221")
+}
+
 // ----- helpers ----- //
 func runCountAndSayTest(t *testing.T, input int, expected string) {
 	t.Helper()
