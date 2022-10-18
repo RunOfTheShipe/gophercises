@@ -2,14 +2,6 @@ package countandsay
 
 import "testing"
 
-func countAndSay(n int) string {
-	if n == 1 {
-		return "1"
-	}
-	return ""
-}
-
-// ----- testing ----- //
 func Test_CountAndSay_S001(t *testing.T) {
 	runCountAndSayTest(t, 1, "1") // base case
 }
