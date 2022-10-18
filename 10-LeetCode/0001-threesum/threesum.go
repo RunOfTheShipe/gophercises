@@ -1,4 +1,4 @@
-package leetcode
+package threesum
 
 import "sort"
 
