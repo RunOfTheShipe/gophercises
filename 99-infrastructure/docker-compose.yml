@@ -1,0 +1,15 @@
+version: '3.4'
+
+services:
+
+  rabbitmq:
+    image: rabbitmq:management-alpine
+    build:
+      context: ./rabbitmq
+      dockerfile: Dockerfile
+
+  sqlserver:
+    image: mcr.microsoft.com/mssql/server:2019-latest
+    build:
+      context: ./sqlserver
+      dockerfile: Dockerfile

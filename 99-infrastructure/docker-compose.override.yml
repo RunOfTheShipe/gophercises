@@ -1,0 +1,28 @@
+version: "3.4"
+
+volumes:
+  gobox-rabbitmq-data:
+    external: false
+  gobox-sql-data:
+    external: false
+
+services:
+
+  rabbitmq:
+    # entrypoint: ["echo", "Service rabbitmq disabled"]
+    volumes:
+      - gobox-rabbitmq-data:/var/lib/rabbitmq
+      - gobox-rabbitmq-data:/var/log/rabbitmq
+    ports:
+      - 15672:15672
+      - 5672:5672
+
+  sqlserver:
+    # entrypoint: ["echo", "Service sqlserver disabled"]
+    environment:
+      - SA_PASSWORD=${GO_SQL_PASSWORD:-Pass@word}
+      - ACCEPT_EULA=Y
+    ports:
+      - 1433:1433
+    volumes:
+      - gobox-sql-data:/var/opt/mssql
